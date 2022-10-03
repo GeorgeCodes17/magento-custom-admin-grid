@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Widget\Model\Widget">
+        <plugin name="image_uploader" type="George\CustomGridAdmin\Plugin\Widget" sortOrder="1"/>
+    </type>
+    <virtualType name="GeorgeCustomGridAdminFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <preference for="George\CustomGridAdmin\Api\Data\GridInterface" type="George\CustomGridAdmin\Model\GridItems" />
+    <virtualType name="George\CustomGridAdmin\Model\ResourceModel\GridItems\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">george_customgrid_items</argument>
+            <argument name="resourceModel" xsi:type="string">George\CustomGridAdmin\Model\ResourceModel\GridItems</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="GeorgeCustomGridAdminProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">George\CustomGridAdmin\Model\Resource\GridItems\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">GeorgeCustomGridAdminFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="george_customgridadmin_listing_data_source" xsi:type="string">George\CustomGridAdmin\Model\ResourceModel\GridItems\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

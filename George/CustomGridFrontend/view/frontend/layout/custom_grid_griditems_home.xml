@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Custom Grid Items</title>
+    </head> 
+    <body>
+        <referenceContainer name="columns">
+
+            <block class="George\CustomGridFrontend\Block\Pagination\Items" name="grid_pagination" template="George_CustomGridFrontend::showItems.phtml"/>
+
+            <block class="Magento\Cms\Block\Block" name="items_title" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom_grid_title</argument>
+                </arguments>
+            </block>
+        
+            <block class="Magento\Cms\Block\Block" name="items_description" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom_grid_description</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+        <referenceContainer name="content" remove="true"></referenceContainer>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"></referenceBlock>
+        <referenceContainer name="sidebar.additional" remove="true"></referenceContainer>
+    </body>
+</page>

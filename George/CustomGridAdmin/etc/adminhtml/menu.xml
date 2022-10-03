@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="//www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="George_CustomGridAdmin::items" title="Custom Grid" module="George_CustomGridAdmin" sortOrder="50" resource="George_CustomGridAdmin::items" />
+        <add id="George_CustomGridAdmin::custom_items_grid" title="Custom Grid Items" module="George_CustomGridAdmin" sortOrder="20" parent="George_CustomGridAdmin::items" action="custom-grid/gridview/items" resource="George_CustomGridAdmin::custom_items_grid"/>
+    </menu>
+</config>

@@ -1,0 +1,26 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="George\CustomGridFrontend\Block\Widget\HomepageAdvert" id="homepage_advert">
+        <label>Homepage Advert</label>
+        <description></description>
+        <parameters>
+
+            <!-- Image Uploader -->
+            <parameter name="advert_image" xsi:type="block" visible="true" required="false">
+                <label translate="true">Advert banner image uploader</label>
+                <block class="George\CustomGridAdmin\Block\Adminhtml\Widget\BannerChooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose banner...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+
+            <parameter name="advert_link" sort_order="10" visible="true" xsi:type="text">
+                <label>Route to go to when click on advert e.g. google.co.uk/home/page would be "home/page"</label>
+            </parameter>
+
+        </parameters>
+    </widget>
+</widgets>

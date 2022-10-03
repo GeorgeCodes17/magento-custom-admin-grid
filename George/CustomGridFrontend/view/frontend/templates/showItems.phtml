@@ -1,0 +1,51 @@
+<?php $gridrecords = $block->getCustomCollection(); ?>
+
+
+<?php if ($gridrecords && sizeof($gridrecords)): ?>
+
+    <div class="custom-grid-container">
+        <div class="custom-grid">
+
+        <?php
+        $i = 0;
+        foreach ($gridrecords as $gridrecord):
+        ?>
+
+            <div class="custom-grid-card">
+                <span>
+                    <h2>
+                        <?php echo $gridrecord->getTitle(); ?>
+                    </h2>
+                    <div class="custom-grid-card-pic">
+                        <img src="/media/<?php echo $gridrecord->getPathToImage(); ?>" />
+                    </div>
+                    <p>
+                        <?php echo $gridrecord->getDescription(); ?>
+                    </p>
+                    
+                    <h4>What I like about it: </h4>
+                    <ul>
+                        <?php 
+                            $keyFeaturesArray = explode(',', $gridrecord->getKeyFeatures());
+                            foreach($keyFeaturesArray as $keyFeature):
+                                echo '<li>' . $keyFeature . '</li>';
+                            endforeach;
+                        ?>
+                    </ul>
+                </span>
+            </div>
+
+        <?php
+            $i++; 
+        endforeach; ?>
+            </div>
+
+<?php if ($block->getPagerHtml()):?>
+        <div class="order-products-toolbar toolbar bottom"> <?php echo $block->getPagerHtml(); ?> </div>
+<?php endif ?>
+
+    </div>
+
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('No items.'); ?></span></div>
+<?php endif ?>
