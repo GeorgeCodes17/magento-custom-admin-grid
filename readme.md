@@ -1,7 +1,7 @@
 Installation
 
 Clone the git repo.
-Place it inside app/code folder.
+Place the folder George inside app/code folder.
 Run "php bin/magento setup:upgrade" at project route to install modules.
 If you want the homepage advert image to show without errors (George/CustomGridFrontend/view/frontend/templates/widget/homepage_advert.phtml) do this
     Stores > Configuration > Content Management > "Use Static URLs for Media content in WYSWIWYG -> Yes".
