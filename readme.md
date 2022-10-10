@@ -1,4 +1,6 @@
-<img width="1508" alt="custom-grid-frontend" src="https://user-images.githubusercontent.com/87329153/194952397-fe6fb1b1-ff2e-4f88-99df-d9a153e18a2d.png">
+![custom-grid-frontend](https://user-images.githubusercontent.com/87329153/194954007-2e65565d-3c0f-4eef-b970-f95e6a070b98.png)
+
+
 
 Installation
 
