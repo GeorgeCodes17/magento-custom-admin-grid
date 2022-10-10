@@ -1,3 +1,5 @@
+<img width="1508" alt="custom-grid-frontend" src="https://user-images.githubusercontent.com/87329153/194952397-fe6fb1b1-ff2e-4f88-99df-d9a153e18a2d.png">
+
 Installation
 
 Clone the git repo.
